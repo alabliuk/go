@@ -13,13 +13,17 @@ func main() {
 	fmt.Scan(&comando)
 	print("--> ", comando, " || ")
 
-	if comando == 1 {
+	switch comando {
+	case 1:
 		fmt.Println("Monitorando...")
-	} else if comando == 2 {
+
+	case 2:
 		fmt.Println("Recuperando logs...")
-	} else if comando == 0 {
+
+	case 0:
 		fmt.Println("Aplicação Encerrada")
-	} else {
+
+	default:
 		fmt.Println("Entrada Inválida!!!")
 	}
 }
