@@ -2,16 +2,12 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func main() {
-	fmt.Println("1 - Iniciar monitoramento")
-	fmt.Println("2 - Exibir logs")
-	fmt.Println("0 - Sair")
 
-	var comando int
-	fmt.Scan(&comando)
-	print("--> ", comando, " || ")
+	comando := menuMain()
 
 	switch comando {
 	case 1:
@@ -22,8 +18,21 @@ func main() {
 
 	case 0:
 		fmt.Println("Aplicação Encerrada")
+		os.Exit(0)
 
 	default:
 		fmt.Println("Entrada Inválida!!!")
+		os.Exit(-1)
 	}
+}
+
+func menuMain() int {
+	fmt.Println("1 - Iniciar monitoramento")
+	fmt.Println("2 - Exibir logs")
+	fmt.Println("0 - Sair")
+
+	var comando int
+	fmt.Scan(&comando)
+	print("--> ", comando, " || ")
+	return comando
 }
